@@ -1,0 +1,19 @@
+﻿nav.second-menu ul.navbar-nav li {
+    margin-right: 20px;
+}
+
+nav.first-menu ul.navbar-nav li {
+    margin-right: 15px;
+}
+
+    nav.first-menu ul.navbar-nav li a.nav-link div{
+
+        color: orange;
+    }
+
+
+    nav.first-menu ul.navbar-nav li a div {
+        color: orange;
+        font-family: 'HankenSans', 'Trebuchet MS', Arial, Helvetica, sans-serif !important;
+        font-size: 12px;
+    }
