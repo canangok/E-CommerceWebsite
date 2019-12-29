@@ -89,6 +89,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\css\index.css" />
+    <Content Include="Content\css\login.css" />
     <Content Include="Content\css\navbar.css" />
     <Content Include="Content\images\img1.jpg" />
     <Content Include="Content\images\img2.png" />
@@ -102,6 +103,7 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -116,6 +118,8 @@
     <Content Include="Views\Shared\_Navbar.cshtml" />
     <Content Include="Views\Shared\_TopMenu.cshtml" />
     <Content Include="Views\Shared\_NavbarMenu.cshtml" />
+    <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\SignUp.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -128,6 +132,12 @@
     <Folder Include="Content\fonts\" />
     <Folder Include="Content\js\" />
     <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\E-CommerceWebSite.Entities\E-CommerceWebSite.Entities.csproj">
+      <Project>{BC617FCC-B69A-4C95-9DD7-ABCF115B3AEA}</Project>
+      <Name>E-CommerceWebSite.Entities</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
