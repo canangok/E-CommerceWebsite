@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{F888E5A4-D7E0-4F3B-961E-6A6DCD91A756}</ProjectGuid>
+    <ProjectGuid>{8A5C32FA-E679-45AE-85DF-4AB6DF853932}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>E_CommerceWebSite.DAL</RootNamespace>
-    <AssemblyName>E-CommerceWebSite.DAL</AssemblyName>
+    <RootNamespace>E_CommerceWebSite.Services</RootNamespace>
+    <AssemblyName>E-CommerceWebSite.Services</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
@@ -31,14 +31,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
-    </Reference>
-    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
-    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -48,32 +41,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Database\ProjectContext.cs" />
-    <Compile Include="Management\CategoryManagement.cs" />
-    <Compile Include="Management\ProductManagement.cs" />
-    <Compile Include="Mapping\CategoryMappings.cs" />
-    <Compile Include="Mapping\ProductMappings.cs" />
-    <Compile Include="Migrations\201912291744377_eCommerceConfigs.cs" />
-    <Compile Include="Migrations\201912291744377_eCommerceConfigs.Designer.cs">
-      <DependentUpon>201912291744377_eCommerceConfigs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="CategoryService.cs" />
+    <Compile Include="ProductService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
+    <ProjectReference Include="..\E-CommerceWebSite.DAL\E-CommerceWebSite.DAL.csproj">
+      <Project>{F888E5A4-D7E0-4F3B-961E-6A6DCD91A756}</Project>
+      <Name>E-CommerceWebSite.DAL</Name>
+    </ProjectReference>
     <ProjectReference Include="..\E-CommerceWebSite.Entities\E-CommerceWebSite.Entities.csproj">
       <Project>{BC617FCC-B69A-4C95-9DD7-ABCF115B3AEA}</Project>
       <Name>E-CommerceWebSite.Entities</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201912291744377_eCommerceConfigs.resx">
-      <DependentUpon>201912291744377_eCommerceConfigs.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -1,4 +1,4 @@
-﻿@model E_CommerceWebSite.Entities.User
+﻿@model E_CommerceWebSite.UI.Models.UserViewModel
 @{
     ViewBag.Title = "Login Index";
 }
@@ -56,13 +56,6 @@
             @using (Html.BeginForm("AddUser", "Login", FormMethod.Post))
             {
 
-                @Html.HiddenFor(i => i.Id)
-                <div class="form-group">
-                    <div class="row">
-                        <!--Validationlarla alakalı uyarıları bana göster-->
-                        @Html.ValidationSummary("", new { @class = "text-danger" })
-                    </div>
-                </div>
                 <div class="form-group">
                     @Html.TextBoxFor(model => model.FirstName, new { @class = "form-control", placeholder = "Ad", required = "required" })
                     @Html.ValidationMessageFor(i => i.FirstName, "", new { @class = "text-danger" })

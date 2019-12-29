@@ -43,6 +43,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
@@ -91,6 +97,7 @@
     <Content Include="Content\css\index.css" />
     <Content Include="Content\css\login.css" />
     <Content Include="Content\css\navbar.css" />
+    <Content Include="Content\images\700_900.png" />
     <Content Include="Content\images\img1.jpg" />
     <Content Include="Content\images\img2.png" />
     <Content Include="Content\images\img3.png" />
@@ -107,6 +114,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ProductViewModel.cs" />
+    <Compile Include="Models\UserViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -131,12 +140,15 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\fonts\" />
     <Folder Include="Content\js\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\E-CommerceWebSite.Entities\E-CommerceWebSite.Entities.csproj">
       <Project>{BC617FCC-B69A-4C95-9DD7-ABCF115B3AEA}</Project>
       <Name>E-CommerceWebSite.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\E-CommerceWebSite.Services\E-CommerceWebSite.Services.csproj">
+      <Project>{8A5C32FA-E679-45AE-85DF-4AB6DF853932}</Project>
+      <Name>E-CommerceWebSite.Services</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
