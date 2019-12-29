@@ -31,12 +31,12 @@ namespace E_CommerceWebSite.UI.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult SignUp()
-        {
-            return PartialView("SignUp");
+        //[HttpGet]
+        //public ActionResult SignUp()
+        //{
+        //    return Content("SignUp");
 
-        }
+        //}
 
 
         [HttpPost]
