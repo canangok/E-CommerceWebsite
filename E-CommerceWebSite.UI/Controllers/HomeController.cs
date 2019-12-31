@@ -1,4 +1,5 @@
 ﻿using E_CommerceWebSite.Services;
+using E_CommerceWebSite.UI.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -22,7 +23,24 @@ namespace E_CommerceWebSite.UI.Controllers
         public ActionResult Index()
         {
             var products = _productService.GetProducts();
-            return View(products);
+            var categories = _categoryService.GetCategories();
+
+            var viewModel = new HomeIndexViewModel
+            {
+                Products = products,
+                Categories = categories
+            };
+
+            return View(viewModel);
+        }
+
+        //[NonAction]
+        [ChildActionOnly]
+        public ActionResult Test()
+        {
+            var categories = _categoryService.GetTopCategories();
+            return PartialView("_NavbarMenu", model: categories);
+            //return PartialView("_");
         }
     }
 }

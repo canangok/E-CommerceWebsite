@@ -25,5 +25,12 @@ namespace E_CommerceWebSite.DAL.Management
             return categories;
         }
 
+        public Category AddCategory(Category category)
+        {
+            category = database.Category.Add(category);
+            database.SaveChanges();
+            return category;
+        }
+
     }
 }

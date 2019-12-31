@@ -24,7 +24,9 @@ namespace E_CommerceWebSite.Services
         //}
 
         public List<Category> GetCategories() => categoryManagement.GetAllCategories();
-        
-                
+        public List<Category> GetTopCategories() => categoryManagement.GetAllCategories().Take(4).ToList();
+
+        public Category Add(Category category) => categoryManagement.AddCategory(category);
+
     }
 }

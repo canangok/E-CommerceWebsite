@@ -1,5 +1,7 @@
-﻿
-
+﻿@model E_CommerceWebSite.UI.Models.HomeIndexViewModel
+@{ 
+    ViewBag.Title = "Anasayfa";
+}
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
@@ -26,64 +28,52 @@
         <span class="sr-only">Next</span>
     </a>
 </div>
-
 <!---------------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------------------------->
-@using E_CommerceWebSite.Entities
-@model List<Product>
 
-@if (Model.Any())
+@if (Model.Products.Any())
 {
-<div class="row">
-    @foreach(Product item in Model)
-    {
-    <div class="col-md-3 col-sm-6 mt-4 ml-5" style="border:1px solid green;">
-        <div class="product-grid2">
-            <div class="product-image2">
-                <a href="#">
-                    <img class="pic-1" src="@item.ProductImage">
-                </a>
-                <ul class="social">
-                    <!--<li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>-->
-                    <li><a href="#" data-tip="İstek Listesine Ekle"><i class="fa fa-shopping-bag"></i></a></li>
-                    <li><a href="#" data-tip="Sepete Ekle"><i class="fa fa-shopping-cart"></i></a></li>
-                </ul>
-                <a class="add-to-cart" href="">Sepete Ekle</a>
-            </div>
-            <div class="product-content">
-                <h3 class="title font-weight-bold">@item.ProductName</h3>
-                <p class="price">
-                    @item.ProductDescriptin
-                </p>
-                <hr />
-                <div class="form-group">
-                    <a class="float-left">@item.Category.CategoryName</a>
-                    <a class="float-right">@item.ProductPrice  TL</a>
+    <div class="row">
+        @foreach (Product item in Model.Products)
+        {
+            <div class="col-md-3 col-sm-6 mt-4 ml-5" style="border:1px solid green;">
+                <div class="product-grid2">
+                    <div class="product-image2">
+                        <a href="#">
+                            <img class="pic-1" src="@item.ProductImage">
+                        </a>
+                        <ul class="social">
+                            <!--<li><a href="#" data-tip="Quick View"><i class="fa fa-eye"></i></a></li>-->
+                            <li><a href="#" data-tip="İstek Listesine Ekle"><i class="fa fa-shopping-bag"></i></a></li>
+                            <li><a href="#" data-tip="Sepete Ekle"><i class="fa fa-shopping-cart"></i></a></li>
+                        </ul>
+                        <a class="add-to-cart" href="">Sepete Ekle</a>
+                    </div>
+                    <div class="product-content">
+                        <h3 class="title font-weight-bold">@item.ProductName</h3>
+                        <p class="price">
+                            @item.ProductDescriptin
+                        </p>
+                        <hr />
+                        <div class="form-group">
+                            <a class="float-left">@item.Category.CategoryName</a>
+                            <a class="float-right">@item.ProductPrice  TL</a>
+                        </div>
+                    </div>
+                    <hr />
+
+                    <div class="form-group">
+                        <a class="btn btn-outline-success text-center">Detay</a>
+                    </div>
                 </div>
             </div>
-            <hr />
-
-                <div class="form-group">
-                    <a class="btn btn-outline-success text-center">Detay</a>
-                </div>
- 
-
-
-        </div>
+        }
     </div>
-    }
-</div>
-   
 }
 else
 {
     <p>Satışta ürün bulunamadı</p>
 }
 
-
-
 <!---------------------------------------------------------------------------------->
-
-
 
 <hr />

@@ -1,8 +1,42 @@
-﻿<div class="navbar navbar-expand-lg navbar-light bg-light first-menu">
+﻿@model List<Category>
+<div class="navbar navbar-expand-lg navbar-light bg-light first-menu">
     <div class="collapse navbar-collapse container" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
+            @foreach (var item in Model)
+            {
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        @item.CategoryName
+                    </a>
+                    <!--
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Yeni Elbiseler</a>
+                        <a class="dropdown-item" href="#">Yeni Pantolonlar</a>
+                        <a class="dropdown-item" href="#">Yeni Etekler</a>
+                    </div>
+                    -->
+                </li>
+            }
+        </ul>
+    </div>
+</div>
 
-            <li class="nav-item dropdown">
+@*@model string
+        .Skip(0).Take(10)
+    .Skip(10).Take(10)
+    @Model*@
+@*
+    @model List<Category>
+
+       @foreach (var item in Model)
+       {
+           <p>@item.CategoryName</p>
+       }
+*@
+
+<!--
+
+<li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Yeni
                 </a>
@@ -55,22 +89,4 @@
                 </div>
             </li>
 
-        </ul>
-    </div>
-</div>
-
-
-<!--
-<li class="nav-item dropdown">
-    <a class="nav-link" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-        Outlet
-    </a>
-    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Elbise</a>
-        <a class="dropdown-item" href="#">Takım</a>
-        <a class="dropdown-item" href="#">Ceket</a>
-
-        <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="#">Something else here</a>
-    </div
-</li>-->
+-->
