@@ -1,10 +1,8 @@
 ﻿using E_CommerceWebSite.DAL.Database;
 using E_CommerceWebSite.Entities;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace E_CommerceWebSite.DAL.Management
 {
@@ -15,13 +13,11 @@ namespace E_CommerceWebSite.DAL.Management
         public CategoryManagement()
         {
             database = new ProjectContext();
-
         }
 
         public List<Category> GetAllCategories()
         {
-            var categories = database.Category.ToList();
-
+            var categories = database.Category.ToList();    
             return categories;
         }
 
@@ -32,5 +28,11 @@ namespace E_CommerceWebSite.DAL.Management
             return category;
         }
 
+
+        public Category FirstCategory(int id)
+        {
+            var category = database.Category.FirstOrDefault(i => i.Id == id);
+            return category;
+        }
     }
 }

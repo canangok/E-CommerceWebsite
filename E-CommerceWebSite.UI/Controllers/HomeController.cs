@@ -33,12 +33,13 @@ namespace E_CommerceWebSite.UI.Controllers
 
             return View(viewModel);
         }
-
+        //HomeController
         //[NonAction]
         [ChildActionOnly]
         public ActionResult Test()
         {
-            var categories = _categoryService.GetTopCategories();
+            //var categories = _categoryService.GetTopCategories();
+            var categories = _categoryService.GetCategories();
             return PartialView("_NavbarMenu", model: categories);
             //return PartialView("_");
         }
